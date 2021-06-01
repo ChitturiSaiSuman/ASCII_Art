@@ -13,6 +13,17 @@ def preProcess() -> Dict:
     # Dictionary for Key-Value pair
     chars = dict()
 
+    for i in range(10):
+        # ch takes values from [0-9]
+        ch = str(i)
+        with open("Letters/" + ch + ".txt", "r") as file:
+            # Read the contents line by line
+            lines = list(map(str, file.read().split("\n")))
+            # Pop last newline character
+            lines.pop()
+            # Store it in Dictionary
+            chars[ch] = lines
+
     for i in range(65, 91):
         # ch takes values from [A-Z]
         ch = chr(i)
