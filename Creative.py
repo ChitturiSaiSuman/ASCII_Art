@@ -37,6 +37,19 @@ def preProcess() -> Dict:
             # Store it in Dictionary
             chars[ch] = lines
 
+    for i in range(97, 123):
+        # ch takes values from [a-z]
+        ch = chr(i)
+
+        # Open the file associated with the Character
+        with open("Letters/" + ch + ".txt", "r") as file:
+            # Read the contents line by line
+            lines = list(map(str, file.read().split("\n")))
+            # Pop last newline character
+            lines.pop()
+            # Store it in Dictionary
+            chars[ch] = lines
+
     # Exclusive snippet for Space Character
     with open("Letters/space.txt", "r") as file:
         lines = list(map(str, file.read().split("\n")))
